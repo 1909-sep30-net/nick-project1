@@ -40,7 +40,7 @@ steps:
   inputs:
     command: 'test'
     projects: './RestaurantReviews'
-    arguments: '-c $(buildConfiguration) --collect "XPlat Code Coverage"'
+    arguments: --configuration $(buildConfiguration) --collect "XPlat Code Coverage"
 
 - task: PublishCodeCoverageResults@1
   displayName: Publish code coverage
@@ -52,6 +52,7 @@ steps:
   displayName: dotnet publish + zip
   inputs:
     command: 'publish'
+    arguments: --configuration $(buildConfiguration)
     publishWebProjects: true
     zipAfterPublish: true
 
