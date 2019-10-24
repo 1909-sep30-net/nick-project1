@@ -39,4 +39,4 @@ steps:
   inputs:
     command: 'test'
     projects: './RestaurantReviews'
-    arguments: '-c $(buildConfiguration)'
+    arguments: '-c $(buildConfiguration) --collect "Code coverage"'
