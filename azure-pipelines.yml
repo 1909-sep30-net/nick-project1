@@ -36,7 +36,8 @@ steps:
 # in this case, this task is both running tests and publishing the results
 # to the build itself
 - task: DotNetCoreCLI@2
+  displayName: dotnet test
   inputs:
     command: 'test'
     projects: './RestaurantReviews'
-    arguments: '-c $(buildConfiguration) --collect "Code coverage"'
+    arguments: '-c $(buildConfiguration) --collect "XPlat Code Coverage"'
