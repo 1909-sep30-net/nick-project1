@@ -41,3 +41,9 @@ steps:
     command: 'test'
     projects: './RestaurantReviews'
     arguments: '-c $(buildConfiguration) --collect "XPlat Code Coverage"'
+
+- task: PublishCodeCoverageResults@1
+  displayName: Publish code coverage
+  inputs:
+    codeCoverageTool: 'Cobertura'
+    summaryFileLocation: '**/TestResults/**/*.xml'
