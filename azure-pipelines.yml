@@ -21,6 +21,8 @@ steps:
     organization: 'escalonn-github'
     scannerMode: 'MSBuild'
     projectKey: 'restreviews1909'
+    extraProperties: |
+        sonar.exclusions=**/lib/**
 
 # three different ways to solve the initial problem
 
