@@ -36,7 +36,7 @@ steps:
 
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
-  workingDirectory: ./RestaurantReviews
+  # workingDirectory: ./RestaurantReviews
 
 # - script: dotnet test
 #   displayName: dotnet test
