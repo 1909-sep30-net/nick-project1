@@ -14,8 +14,10 @@ namespace RestaurantReviews.WebUI.Controllers
     {
         public IRestaurantRepository Repo { get; }
 
-        public RestaurantController(IRestaurantRepository repo) =>
+        public RestaurantController(IRestaurantRepository repo)
+        {
             Repo = repo ?? throw new ArgumentNullException(nameof(repo));
+        }
 
         // GET: Restaurant
         // default value for "search" means i can use this method both for search results
