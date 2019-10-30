@@ -22,7 +22,8 @@ steps:
     scannerMode: 'MSBuild'
     projectKey: 'restreviews1909'
     extraProperties: |
-        sonar.exclusions=**/lib/**
+      sonar.exclusions=**/lib/**
+      sonar.cs.opencover.reportsPaths=$(Agent.TempDirectory)/*/coverage.opencover.xml
 
 # three different ways to solve the initial problem
 
@@ -51,7 +52,7 @@ steps:
   inputs:
     command: 'test'
     projects: './RestaurantReviews'
-    arguments: --configuration $(buildConfiguration) --collect "XPlat Code Coverage"
+    arguments: --configuration $(buildConfiguration) --settings coverletArgs.runsettings
 
 - task: PublishCodeCoverageResults@1
   displayName: Publish code coverage
