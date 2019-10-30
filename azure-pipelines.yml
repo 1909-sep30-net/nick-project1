@@ -52,7 +52,9 @@ steps:
   inputs:
     command: 'test'
     projects: './RestaurantReviews'
-    arguments: --configuration $(buildConfiguration) --settings **/coverletArgs.runsettings
+    arguments:
+      --configuration $(buildConfiguration)
+      --settings RestaurantReviews/coverletArgs.runsettings
 
 - task: PublishCodeCoverageResults@1
   displayName: Publish code coverage
